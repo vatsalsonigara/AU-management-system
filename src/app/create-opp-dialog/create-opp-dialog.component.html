@@ -1,0 +1,44 @@
+<h2 mat-dialog-title> Creating Opportunity</h2>
+
+    <div >
+  <mat-form-field >
+    <mat-label>Opportunity Title</mat-label>
+    <input matInput [(ngModel)]="oppName" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Location</mat-label>
+    <input matInput [(ngModel)]="location" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Manager</mat-label>
+    <input matInput [(ngModel)]="manager"required >
+  </mat-form-field>
+  
+</div>
+<div>
+  <mat-form-field>
+    <mat-label>Creator</mat-label>
+    <input matInput [(ngModel)]="oppCreator" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Creator Email</mat-label>
+    <input matInput [(ngModel)]="oppEmail" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Skills</mat-label>
+    <input matInput [(ngModel)]="skills" required>
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Experience</mat-label>
+    <input matInput type="number"  [(ngModel)]="expInYrs" required>
+  </mat-form-field>
+</div>
+<mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-raised-button type ="submit" (click)="createOpportunity()">Create</button>
+</mat-dialog-actions>
