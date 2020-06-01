@@ -48,14 +48,17 @@ export class OppTableComponent implements OnInit {
   columnsToDisplay: string[] =["Title","Location","Experience","Creator","Creator Email","Skills","Manager"];
   displayedColumns: string[] = ['oppName', 'location', 'expInYrs', 'oppCreator','oppEmail','skills','manager','menu'];
   dataSource:any = [];
-  
+  copyData:any =[]
+  filter:string;
+  searchData:string
   constructor(private _oppService:OpportunityService) { }
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
   ngOnInit(): void {
     this._oppService.getAllOpportunities()
     .subscribe(data => {
       console.log(data);
-      this.dataSource=data;
+      this.dataSource=Object.assign([], data);;
+      this.copyData=Object.assign([], data);;
     })
   }
   onDelete(row){
@@ -64,6 +67,18 @@ export class OppTableComponent implements OnInit {
     this.dataSource = this.dataSource.filter((value,key)=>{
       return value.id != row.id;
     });
+  }
+  onSearch(){
+    this.dataSource=Object.assign([], this.copyData);
+    this.dataSource = this.dataSource.filter((value,key)=>{
+      if(this.filter=='skills') return value.skills ===this.searchData;
+      else if(this.filter=='location') return value.location===this.searchData;
+      else if(this.filter=='type') return value.oppName===this.searchData;
+      else return true; 
+    });
+  }
+  onFilter(filter){
+    this.filter=filter;
   }
   
 

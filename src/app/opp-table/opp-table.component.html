@@ -1,18 +1,18 @@
 <mat-form-field style="margin:10px">
   <mat-label>Filter</mat-label>
   <mat-select>
-    <mat-option value="option1">Skills</mat-option>
-    <mat-option value="option2">Location</mat-option>
-    <mat-option value="option3">Opportunity Type</mat-option>
+    <mat-option (click)="onFilter('skills')" value="skills">Skills</mat-option>
+    <mat-option (click)="onFilter('location')" value="option2">Location</mat-option>
+    <mat-option (click)="onFilter('type')" value="option3">Opportunity Type</mat-option>  
   </mat-select>
 </mat-form-field>
   <mat-form-field appearance="outline" style="margin:10px">
     <mat-label>Search</mat-label>
-    <input matInput placeholder="Placeholder">
+    <input  [(ngModel)]="searchData" matInput placeholder="Placeholder">
     
     <!-- <mat-hint>Hint</mat-hint> -->
   </mat-form-field>
-  <button mat-icon-button><mat-icon matSuffix>search</mat-icon></button>
+  <button mat-icon-button (click)="onSearch()"><mat-icon matSuffix>search</mat-icon></button>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
         <!--- Note that these columns can be defined in any order.
