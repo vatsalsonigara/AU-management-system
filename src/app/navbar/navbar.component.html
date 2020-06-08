@@ -2,9 +2,9 @@
     <mat-toolbar-row>
         <button mat-button [matMenuTriggerFor]="menu">Menu</button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>Home</button>
-          <button mat-menu-item>Oppurtunity Management</button>
-          
+            <button mat-menu-item (click)='goToHome()'>Home</button>
+          <button mat-menu-item (click)='goToOpportunity()'>Oppurtunity Management</button>
+          <button mat-menu-item (click)='goToTrends()'>Trends</button>
         </mat-menu>
       <h1>AU Management System</h1>
       <span class="menu-spacer"></span>
@@ -17,6 +17,9 @@
         <a mat-button [routerLink]="'/create-activity'"> Create Activity </a>
   
       </div> -->
+      <div style="margin-left: 800px" *ngIf="this.router.url!='/'" >
+        <button mat-raised-button (click)="signOut()" color="success">Log out</button>
+      </div>
     </mat-toolbar-row>
   
     <!-- <mat-toolbar-row>

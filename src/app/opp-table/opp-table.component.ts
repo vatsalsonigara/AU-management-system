@@ -2,6 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
 import { OpportunityService } from '../opportunity.service';
 import { Opportunity } from '../Opportunity';
+import { MatDialog } from '@angular/material/dialog';
+import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 
 export interface OpportunityDetails {
   id: number;
@@ -51,7 +53,7 @@ export class OppTableComponent implements OnInit {
   copyData:any =[]
   filter:string;
   searchData:string
-  constructor(private _oppService:OpportunityService) { }
+  constructor(private _oppService:OpportunityService,private dialog:MatDialog) { }
   @ViewChild(MatTable,{static:true}) table: MatTable<any>;
   ngOnInit(): void {
     this._oppService.getAllOpportunities()
@@ -80,6 +82,33 @@ export class OppTableComponent implements OnInit {
   onFilter(filter){
     this.filter=filter;
   }
-  
+  reloadTable(){
+    this._oppService.getAllOpportunities()
+    .subscribe(data => {
+      console.log(data);
+      this.dataSource=Object.assign([], data);;
+      this.copyData=Object.assign([], data);;
+    })
+  }
+  openDialog(row): void {
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+      data :{
+        id:row.id,
+        oppName:row.oppName,
+        location:row.location,
+        expInYrs:row.expInYrs,
+        oppCreator:row.oppCreator,
+        oppEmail:row.oppEmail,
+        manager:row.manager,
+        skills:row.skills
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.ngOnInit();
+    });
+    //this.reloadTable();
+  }
 
 }

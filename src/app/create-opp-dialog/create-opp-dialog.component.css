@@ -12,3 +12,7 @@ div{
 .right {
   right: 0;
 }
+.mat-success {
+  background-color: green;
+  color: #fff;
+}

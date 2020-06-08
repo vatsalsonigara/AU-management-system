@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { OpportunityService } from '../opportunity.service';
+import { OppTableComponent } from '../opp-table/opp-table.component';
 
 @Component({
   selector: 'app-create-opp-dialog',
@@ -17,7 +18,7 @@ export class CreateOppDialogComponent implements OnInit {
   expInYrs:number;
   location:string;
   lastUpdated:string;
-  constructor(private _oppService:OpportunityService,
+  constructor( private _oppService:OpportunityService,
     public dialogRef: MatDialogRef<CreateOppDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
@@ -40,5 +41,6 @@ export class CreateOppDialogComponent implements OnInit {
     console.log(oppData);
     this._oppService.createOpportunity(oppData).subscribe();
     this.dialogRef.close();
-    }
+   // new OppTableComponent(this._oppService).reloadTable();
+    } 
 }

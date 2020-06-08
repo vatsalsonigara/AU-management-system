@@ -3,7 +3,7 @@
     <div >
   <mat-form-field >
     <mat-label>Opportunity Title</mat-label>
-    <input matInput [(ngModel)]="oppName" required>
+    <input matInput [(ngModel)]="oppName" required ="required" >
   </mat-form-field>
   <br>
   <mat-form-field>
@@ -40,5 +40,5 @@
 </div>
 <mat-dialog-actions>
     <button mat-button (click)="onCancelClick()">Cancel</button>
-    <button mat-raised-button type ="submit" (click)="createOpportunity()">Create</button>
+    <button mat-raised-button color='success' routerLink="opportunity" type ="submit" (click)="createOpportunity()">Create</button>
 </mat-dialog-actions>

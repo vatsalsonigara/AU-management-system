@@ -1,0 +1,43 @@
+<h2 mat-dialog-title> Creating Opportunity</h2>
+    <div >
+  <mat-form-field >
+    <mat-label>Opportunity Title</mat-label>
+    <input matInput [(ngModel)]="oppName" required value="{{this.data.oppName}}">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Location</mat-label>
+    <input matInput [(ngModel)]="location" required  value="{{this.data.location}}">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Manager</mat-label>
+    <input matInput [(ngModel)]="manager"required value="{{this.data.manager}} ">
+  </mat-form-field>
+  
+</div>
+<div>
+  <mat-form-field>
+    <mat-label>Creator</mat-label>
+    <input matInput [(ngModel)]="oppCreator" required value="{{this.data.oppCreator}}">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Creator Email</mat-label>
+    <input matInput [(ngModel)]="oppEmail" required value="{{this.data.oppEmail}}">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Skills</mat-label>
+    <input matInput [(ngModel)]="skills" required value="{{this.data.skills}}">
+  </mat-form-field>
+  <br>
+  <mat-form-field>
+    <mat-label>Experience</mat-label>
+    <input matInput type="number"  [(ngModel)]="expInYrs" required value="{{this.data.expInYrs}}">
+  </mat-form-field>
+</div>
+<mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()">Cancel</button>
+    <button mat-raised-button color='success' routerLink="opportunity" type ="submit" (click)="editOpportunity()">Edit</button>
+</mat-dialog-actions>
