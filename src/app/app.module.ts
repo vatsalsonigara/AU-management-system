@@ -25,6 +25,7 @@ import { CombineComponent } from './combine/combine.component';
 import { HomeComponent } from './home/home.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { TrendsComponent } from './trends/trends.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 let config = new AuthServiceConfig([
   {
@@ -52,6 +53,7 @@ export function provideConfig() {
   imports: [
     BrowserModule,
     FormsModule,
+    MatGridListModule,
     SocialLoginModule,
     MatSelectModule,
     HttpClientModule,

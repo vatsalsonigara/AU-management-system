@@ -16,3 +16,6 @@ div{
   background-color: green;
   color: #fff;
 }
+mat-form-field{
+  width: 90%;
+}

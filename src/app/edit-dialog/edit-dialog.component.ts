@@ -44,6 +44,7 @@ export class EditDialogComponent implements OnInit {
     oppData['oppEmail']=this.oppEmail;
     oppData['skills']=this.skills;
     oppData['id']=this.id;
+    if(!this.checkValidation(oppData)) return;
     console.log(oppData);
     this._oppService.editOpportunity(oppData).subscribe();
     this.dialogRef.close();
@@ -51,5 +52,11 @@ export class EditDialogComponent implements OnInit {
   onCancelClick(): void {
     this.dialogRef.close();
   }
-
+  checkValidation(oppData):boolean{
+    for(var key in oppData){
+      if(oppData[key]==='') return false;
+    }
+    if(oppData['expInYrs']===null) return false;
+    return true;
+  }
 }

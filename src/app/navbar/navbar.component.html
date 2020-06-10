@@ -1,6 +1,6 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row>
-        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <button mat-button [matMenuTriggerFor]="menu"  *ngIf="this.router.url!='/'">Menu</button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)='goToHome()'>Home</button>
           <button mat-menu-item (click)='goToOpportunity()'>Oppurtunity Management</button>

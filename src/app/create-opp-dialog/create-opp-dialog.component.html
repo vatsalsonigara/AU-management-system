@@ -1,44 +1,59 @@
 <h2 mat-dialog-title> Creating Opportunity</h2>
-
-    <div >
+<mat-grid-list cols="2" rowHeight="75px" >
+  <mat-grid-tile>
   <mat-form-field >
     <mat-label>Opportunity Title</mat-label>
     <input matInput [(ngModel)]="oppName" required ="required" >
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  <br>
+</mat-grid-tile>
+  <mat-grid-tile>
   <mat-form-field>
     <mat-label>Location</mat-label>
     <input matInput [(ngModel)]="location" required>
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  <br>
+</mat-grid-tile>
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Manager</mat-label>
     <input matInput [(ngModel)]="manager"required >
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  
-</div>
-<div>
+</mat-grid-tile>
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Creator</mat-label>
     <input matInput [(ngModel)]="oppCreator" required>
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  <br>
+</mat-grid-tile>
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Creator Email</mat-label>
     <input matInput [(ngModel)]="oppEmail" required>
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  <br>
+</mat-grid-tile>
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Skills</mat-label>
     <input matInput [(ngModel)]="skills" required>
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  <br>
+</mat-grid-tile>
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Experience</mat-label>
     <input matInput type="number"  [(ngModel)]="expInYrs" required>
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-</div>
+
+</mat-grid-tile>
+<mat-grid-tile>
 <mat-dialog-actions>
     <button mat-button (click)="onCancelClick()">Cancel</button>
     <button mat-raised-button color='success' routerLink="opportunity" type ="submit" (click)="createOpportunity()">Create</button>
 </mat-dialog-actions>
+</mat-grid-tile>
+</mat-grid-list>

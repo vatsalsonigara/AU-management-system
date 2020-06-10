@@ -92,6 +92,8 @@ export class OppTableComponent implements OnInit {
   }
   openDialog(row): void {
     const dialogRef = this.dialog.open(EditDialogComponent, {
+      height: '400px',
+      width: '600px',
       data :{
         id:row.id,
         oppName:row.oppName,

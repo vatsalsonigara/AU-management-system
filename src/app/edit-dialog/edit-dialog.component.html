@@ -1,43 +1,58 @@
-<h2 mat-dialog-title> Creating Opportunity</h2>
-    <div >
+<h2 mat-dialog-title> Edit Opportunity</h2>
+<mat-grid-list cols="2" rowHeight="75px" >
+  <mat-grid-tile>
   <mat-form-field >
     <mat-label>Opportunity Title</mat-label>
     <input matInput [(ngModel)]="oppName" required value="{{this.data.oppName}}">
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  <br>
+</mat-grid-tile>
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Location</mat-label>
     <input matInput [(ngModel)]="location" required  value="{{this.data.location}}">
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  <br>
+</mat-grid-tile>
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Manager</mat-label>
     <input matInput [(ngModel)]="manager"required value="{{this.data.manager}} ">
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  
-</div>
-<div>
+</mat-grid-tile> 
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Creator</mat-label>
     <input matInput [(ngModel)]="oppCreator" required value="{{this.data.oppCreator}}">
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  <br>
+</mat-grid-tile>
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Creator Email</mat-label>
     <input matInput [(ngModel)]="oppEmail" required value="{{this.data.oppEmail}}">
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  <br>
+</mat-grid-tile>
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Skills</mat-label>
     <input matInput [(ngModel)]="skills" required value="{{this.data.skills}}">
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-  <br>
+</mat-grid-tile>
+<mat-grid-tile>
   <mat-form-field>
     <mat-label>Experience</mat-label>
     <input matInput type="number"  [(ngModel)]="expInYrs" required value="{{this.data.expInYrs}}">
+    <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-</div>
+</mat-grid-tile>
+<mat-grid-tile>
 <mat-dialog-actions>
     <button mat-button (click)="onCancelClick()">Cancel</button>
     <button mat-raised-button color='success' routerLink="opportunity" type ="submit" (click)="editOpportunity()">Edit</button>
 </mat-dialog-actions>
+</mat-grid-tile>
+</mat-grid-list>

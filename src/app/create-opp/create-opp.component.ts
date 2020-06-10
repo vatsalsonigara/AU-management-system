@@ -19,7 +19,8 @@ export class CreateOppComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateOppDialogComponent, {
-     
+      height: '400px',
+      width: '600px'
       
     });
 
