@@ -26,6 +26,7 @@ import { HomeComponent } from './home/home.component';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { TrendsComponent } from './trends/trends.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 let config = new AuthServiceConfig([
   {
@@ -53,6 +54,7 @@ export function provideConfig() {
   imports: [
     BrowserModule,
     FormsModule,
+    MatPaginatorModule,
     MatGridListModule,
     SocialLoginModule,
     MatSelectModule,

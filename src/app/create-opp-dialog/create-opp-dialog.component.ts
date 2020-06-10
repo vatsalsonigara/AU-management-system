@@ -38,15 +38,12 @@ export class CreateOppDialogComponent implements OnInit {
     oppData['oppEmail']=this.oppEmail;
     oppData['skills']=this.skills;
     if(!this.checkValidation(oppData)) return;
-    console.log(oppData);
     this._oppService.createOpportunity(oppData).subscribe();
     this.dialogRef.close();
-   // new OppTableComponent(this._oppService).reloadTable();
   } 
     checkValidation(oppData):boolean{
       for(var key in oppData){
         if(oppData[key]==='' || oppData[key]===undefined) return false;
-        console.log(oppData[key])
       }
       if(oppData['expInYrs']===null) return false;
       return true;

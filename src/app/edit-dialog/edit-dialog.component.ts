@@ -23,7 +23,6 @@ export class EditDialogComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
   ngOnInit(): void {
-    console.log(this.data);
     this.id=this.data.id;
     this.skills=this.data.skills;
     this.manager=this.data.manager;
@@ -45,7 +44,6 @@ export class EditDialogComponent implements OnInit {
     oppData['skills']=this.skills;
     oppData['id']=this.id;
     if(!this.checkValidation(oppData)) return;
-    console.log(oppData);
     this._oppService.editOpportunity(oppData).subscribe();
     this.dialogRef.close();
   }

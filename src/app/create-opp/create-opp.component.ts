@@ -19,13 +19,12 @@ export class CreateOppComponent implements OnInit {
   }
   openDialog(): void {
     const dialogRef = this.dialog.open(CreateOppDialogComponent, {
-      height: '400px',
+      height: '450px',
       width: '600px'
       
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
     });
   }
 

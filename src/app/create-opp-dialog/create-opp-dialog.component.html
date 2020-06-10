@@ -1,54 +1,53 @@
 <h2 mat-dialog-title> Creating Opportunity</h2>
-<mat-grid-list cols="2" rowHeight="75px" >
+<mat-grid-list cols="2" rowHeight="80px" >
   <mat-grid-tile>
-  <mat-form-field >
+  <mat-form-field appearance="outline"  >
     <mat-label>Opportunity Title</mat-label>
     <input matInput [(ngModel)]="oppName" required ="required" >
     <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
 </mat-grid-tile>
   <mat-grid-tile>
-  <mat-form-field>
+  <mat-form-field appearance="outline" >
     <mat-label>Location</mat-label>
     <input matInput [(ngModel)]="location" required>
     <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
 </mat-grid-tile>
 <mat-grid-tile>
-  <mat-form-field>
+  <mat-form-field appearance="outline" >
     <mat-label>Manager</mat-label>
     <input matInput [(ngModel)]="manager"required >
     <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
 </mat-grid-tile>
 <mat-grid-tile>
-  <mat-form-field>
+  <mat-form-field appearance="outline" >
     <mat-label>Creator</mat-label>
     <input matInput [(ngModel)]="oppCreator" required>
     <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
 </mat-grid-tile>
 <mat-grid-tile>
-  <mat-form-field>
+  <mat-form-field appearance="outline" >
     <mat-label>Creator Email</mat-label>
     <input matInput [(ngModel)]="oppEmail" required>
     <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
 </mat-grid-tile>
 <mat-grid-tile>
-  <mat-form-field>
+  <mat-form-field appearance="outline" >
     <mat-label>Skills</mat-label>
     <input matInput [(ngModel)]="skills" required>
     <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
 </mat-grid-tile>
 <mat-grid-tile>
-  <mat-form-field>
+  <mat-form-field appearance="outline" >
     <mat-label>Experience</mat-label>
     <input matInput type="number"  [(ngModel)]="expInYrs" required>
     <mat-error>This field is mandatory</mat-error>
   </mat-form-field>
-
 </mat-grid-tile>
 <mat-grid-tile>
 <mat-dialog-actions>

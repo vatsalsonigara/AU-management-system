@@ -11,8 +11,4 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  getUrl(){
-    return "/home/vatsal/Desktop/angular accolite/AU-management-system/src/app/home/bg.jpeg";
-
-  }
 }

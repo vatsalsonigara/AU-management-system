@@ -19,53 +19,17 @@ export class LoginComponent implements OnInit {
   user :SocialUser=this.loginService.user;
   loggedIn: boolean=this.loginService.loggedIn ;
   ngOnInit(): void {
-    console.log(this.loggedIn)
     this.loggedIn=this.loginService.loggedIn;
     if(this.loggedIn) this.router.navigateByUrl('/home');
   }
   
-
   signInWithGoogle(){
     this.loggedIn=null;
     this.user=null;
      this.loginService.signOut().then((value)=>{
-      this.loginService.signInWithGoogle().subscribe(
-        (user) => {
-          this.loginService.user=this.user = user;
-          
-          if(user != null) {
-            //console.log(user+"hello");
-            this._oppService.sendLoginDetails(user).subscribe((data)=>{
-              console.log(data.status)
-              // if(data.status==401) {
-              //   this.router.navigateByUrl('/')
-              // }
-              this.loginService.loggedIn=this.loggedIn = (user != null);
-              this.router.navigateByUrl('/home').then((val)=>this.preventBackButton()); 
-            });
-            
-          } 
-        }
-        
-      );
+      this.signIn()
     }).catch(()=>{
-      this.loginService.signInWithGoogle().subscribe(
-        (user) => {
-          this.loginService.user=this.user = user;
-          if(user != null) {
-            //console.log(user+"hello");
-            this._oppService.sendLoginDetails(user).subscribe((data)=>{
-              console.log(data.status)
-              // if(data.status==401) {
-              //   this.router.navigateByUrl('/')
-              // }
-              this.loginService.loggedIn=this.loggedIn = (user != null);
-              this.router.navigateByUrl('/home').then((val)=>this.preventBackButton()); 
-            });
-            
-          } 
-        }
-      );
+      this.signIn()
     })
     
   }
@@ -77,12 +41,24 @@ export class LoginComponent implements OnInit {
     
   }
   preventBackButton() {
-    //console.log("test")
     history.pushState(null, null, location.href);
     this.locationStrategy.onPopState(() => {
       history.pushState(null, null, location.href);
     })
   }
-  
+  signIn(){
+    this.loginService.signInWithGoogle().subscribe(
+      (user) => {
+        this.loginService.user=this.user = user; 
+        if(user != null) {
+          this._oppService.sendLoginDetails(user).subscribe((data)=>{
+            this.loginService.loggedIn=this.loggedIn = (user != null);
+            this.router.navigateByUrl('/home').then((val)=>this.preventBackButton()); 
+          });
+          
+        } 
+      }
+    );
+  }
 
 }

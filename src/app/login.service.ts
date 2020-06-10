@@ -18,7 +18,5 @@ export class LoginService   {
     localStorage.clear()
     this.loggedIn=false;
     return this.authService.signOut()
-    //this._oppService.logoutUser(this.user);
-   
   }
 }
