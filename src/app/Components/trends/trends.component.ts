@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as CanvasJS from '../../../canvasjs.min';
-import { OpportunityService } from '../opportunity.service';
+import * as CanvasJS from '../../../../canvasjs.min';
+import { OpportunityService } from 'src/app/Services/opportunity.service';
 @Component({
   selector: 'app-trends',
   templateUrl: './trends.component.html',

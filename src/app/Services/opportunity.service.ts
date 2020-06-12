@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Opportunity } from './Opportunity';
+import { Opportunity } from '../Model/Opportunity';
 import { SocialUser } from 'angularx-social-login';
 import { share } from 'rxjs/operators';
-import {environment } from '../environments/environment';
+import {environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'

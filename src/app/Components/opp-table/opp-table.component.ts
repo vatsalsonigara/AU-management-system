@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
-import { OpportunityService } from '../opportunity.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { OpportunityService } from 'src/app/Services/opportunity.service';
 
 @Component({
   selector: 'app-opp-table',

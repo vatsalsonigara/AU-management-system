@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login.service';
+import { LoginService } from '../../Services/login.service';
 import { log } from 'util';
 import { AuthService, GoogleLoginProvider, SocialUser } from 'angularx-social-login';
 import { Router } from '@angular/router';
 import { LocationStrategy } from '@angular/common';
-import { OpportunityService } from '../opportunity.service';
+import { OpportunityService } from '../../Services/opportunity.service';
 
 @Component({
   selector: 'app-login',

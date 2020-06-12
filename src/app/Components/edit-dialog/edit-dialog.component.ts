@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { OpportunityService } from '../opportunity.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { CreateOppDialogComponent } from '../create-opp-dialog/create-opp-dialog.component';
+import { OpportunityService } from 'src/app/Services/opportunity.service';
 
 @Component({
   selector: 'app-edit-dialog',

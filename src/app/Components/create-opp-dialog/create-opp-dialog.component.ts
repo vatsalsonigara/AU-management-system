@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { OpportunityService } from '../opportunity.service';
 import { OppTableComponent } from '../opp-table/opp-table.component';
+import { OpportunityService } from 'src/app/Services/opportunity.service';
 
 @Component({
   selector: 'app-create-opp-dialog',
